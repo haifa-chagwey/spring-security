@@ -1,6 +1,7 @@
 package com.haifachagwey.springsecurity.student;
 
 import org.springframework.security.access.prepost.PreAuthorize;
+import org.springframework.security.web.csrf.CsrfToken;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -27,4 +28,5 @@ public class StudentController {
                 .findFirst()
                 .orElseThrow(() -> new IllegalStateException("Student with id " + id + " does not exist"));
     }
+
 }
