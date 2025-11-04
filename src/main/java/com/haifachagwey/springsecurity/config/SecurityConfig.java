@@ -68,26 +68,26 @@ public class SecurityConfig {
     }
 
 //    Fetch user details from database
-    @Bean
-    public UserDetailsService userDetailsService(PasswordEncoder passwordEncoder) {
-        UserDetails anna = User.builder()
-                .username("anna")
-                .password(passwordEncoder.encode("password")) // {noop} means no password encoder
-                .roles(STUDENT.name()) // ROLE_STUDENT
-                .authorities(STUDENT.getRoleGrantedAuthorities())
-                .build();
-        UserDetails linda = User.builder()
-                .username("linda")
-                .password(passwordEncoder.encode("password")) // {noop} means no password encoder
-                .roles(ADMIN.name()) // ROLE_ADMIN
-                .authorities(ADMIN.getRoleGrantedAuthorities())
-                .build();
-        UserDetails tom = User.builder()
-                .username("tom")
-                .password(passwordEncoder.encode("password")) // {noop} means no password encoder
-                .roles(ADMIN_TRAINEE.name()) // ROLE_ADMIN_TRAINEE
-                .authorities(ADMIN_TRAINEE.getRoleGrantedAuthorities())
-                .build();
-        return new InMemoryUserDetailsManager(anna, linda, tom);
-    }
+//    @Bean
+//    public UserDetailsService userDetailsService(PasswordEncoder passwordEncoder) {
+//        UserDetails anna = User.builder()
+//                .username("anna")
+//                .password(passwordEncoder.encode("password")) // {noop} means no password encoder
+//                .roles(STUDENT.name()) // ROLE_STUDENT
+//                .authorities(STUDENT.getRoleGrantedAuthorities())
+//                .build();
+//        UserDetails linda = User.builder()
+//                .username("linda")
+//                .password(passwordEncoder.encode("password")) // {noop} means no password encoder
+//                .roles(ADMIN.name()) // ROLE_ADMIN
+//                .authorities(ADMIN.getRoleGrantedAuthorities())
+//                .build();
+//        UserDetails tom = User.builder()
+//                .username("tom")
+//                .password(passwordEncoder.encode("password")) // {noop} means no password encoder
+//                .roles(ADMIN_TRAINEE.name()) // ROLE_ADMIN_TRAINEE
+//                .authorities(ADMIN_TRAINEE.getRoleGrantedAuthorities())
+//                .build();
+//        return new InMemoryUserDetailsManager(anna, linda, tom);
+//    }
 }
