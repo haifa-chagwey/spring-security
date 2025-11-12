@@ -1,0 +1,5 @@
+application:
+    jwt:
+      secretKey: "this-is-a-very-long-and-secure-hs256-secret-key-which-is-at-least-32-bytes"
+      tokenPrefix: "Bearer "
+      tokenExpirationAfterDays: 14
